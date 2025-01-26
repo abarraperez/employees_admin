@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
@@ -14,7 +15,10 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        //
+        return view('events.index', [
+            'appointments' => Appointment::with('client')->get(),
+            'clients' => Client::all(),
+        ]);
     }
 
     /**
@@ -36,6 +40,10 @@ class AppointmentController extends Controller
     public function store(Request $request)
     {
         //
+        
+        Appointment::create($request->all());
+        return redirect()->route('events.index');
+
     }
 
     /**
@@ -46,7 +54,9 @@ class AppointmentController extends Controller
      */
     public function show(Appointment $appointment)
     {
-        //
+        return view('events.show', [
+            'appointment' => $appointment,
+        ]);
     }
 
     /**
@@ -56,8 +66,12 @@ class AppointmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Appointment $appointment)
-    {
-        //
+    {   
+        return view('events.edit', [
+            'appointment' => $appointment,
+            'clients' => Client::all(),
+        ]);
+
     }
 
     /**
@@ -69,7 +83,8 @@ class AppointmentController extends Controller
      */
     public function update(Request $request, Appointment $appointment)
     {
-        //
+        $appointment->update($request->all());
+        return redirect()->route('events.index');
     }
 
     /**
@@ -79,7 +94,8 @@ class AppointmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Appointment $appointment)
-    {
-        //
+    {  
+        $appointment->delete();
+        return redirect()->route('events.index');
     }
 }
