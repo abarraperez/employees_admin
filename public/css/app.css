@@ -9241,3 +9241,10 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+
+.fc-col-header-cell-cushion    {
+  color: #5E993D !important;
+}
+.nav-link {
+  color: white !important;
+}
