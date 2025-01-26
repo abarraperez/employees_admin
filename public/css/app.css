@@ -9248,3 +9248,10 @@ a.text-dark:hover, a.text-dark:focus {
 .nav-link {
   color: white !important;
 }
+.btn-primary {
+  background-color: #c7832b !important;
+}
+.btn-warning {
+  background-color: #5E993D  !important;
+  color:white !important;
+}	
