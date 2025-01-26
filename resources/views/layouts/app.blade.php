@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+  
 </head>
 <body>
     <div id="app">
@@ -26,8 +28,8 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}" style="color: white !important;font-weight:bold">
                     <span style="display: inline-block; background-color: white; padding: 5px; border-radius: 50%;">
-        <img src="https://sinstress.cl/wp-content/uploads/2023/09/ico-sinstress-1.ico" alt="Logo" style="height: 40px;">
-    </span>
+                        <img src="https://sinstress.cl/wp-content/uploads/2023/09/ico-sinstress-1.ico" alt="Logo" style="height: 40px;">
+                        </span>
                     GESTION SINSTRESS
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -39,7 +41,65 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
+                    @guest
+                     <ul></ul>
+                    @else
+                    <ul class="navbar-nav mr-auto">
+                        <!-- Agregar tus enlaces de navegación aquí -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home') }}">Dashboard</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Ventas
+                                </a>
 
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" >
+                                       > Presupuestos
+                                    </a>   
+                                    <a class="dropdown-item" >
+                                      > Cobros/Pagos
+                                    </a>
+                                   
+                                </div>
+                               
+                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >Agenda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >Proveedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >Empleados</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Configuracion
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" >
+                                      > Tipos de documentos
+                                    </a>
+                                    <a class="dropdown-item" >
+                                       > Tipos de capacitaciones
+                                    </a>
+                                    <a class="dropdown-item" >
+                                      > Tipos de eventos
+                                    </a>
+                                </div>
+                               
+                            </li>
+                    </ul>
+                    @endguest
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -75,6 +135,7 @@
                             </li>
                         @endguest
                     </ul>
+
                 </div>
             </div>
         </nav>
@@ -83,5 +144,6 @@
             @yield('content')
         </main>
     </div>
+    @stack('scripts')
 </body>
 </html>
