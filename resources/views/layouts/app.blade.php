@@ -19,10 +19,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-     <!-- FontAwesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-  
 </head>
 <body>
     <div id="app">
@@ -77,14 +76,13 @@
                         <li class="nav-item">
                             <a class="nav-link"  href="{{ route('agenda') }}"
                             >Agenda
-
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"  href="{{ route('events.index') }}">Eventos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" >Clientes</a>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="{{ route('cliente.index') }}" >Clientes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" >Proveedores</a>
