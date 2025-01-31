@@ -19,7 +19,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-  
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
     <div id="app">
@@ -55,24 +57,32 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" >
-                                       > Presupuestos
+                                <a class="dropdown-item" >
+                                      > Informes
+                                    </a>    
+                                <a class="dropdown-item" >
+                                       > Cotizaciones
                                     </a>   
                                     <a class="dropdown-item" >
-                                      > Cobros/Pagos
+                                      > Ventas
                                     </a>
-                                   
+                                    <a class="dropdown-item" >
+                                      > Compras
+                                    </a>
+                                    
                                 </div>
                                
                             </li>
                         <li class="nav-item">
-                            <a class="nav-link" >Agenda</a>
+                            <a class="nav-link"  href="{{ route('agenda') }}"
+                            >Agenda
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" >Eventos</a>
+                            <a class="nav-link"  href="{{ route('events.index') }}">Eventos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" >Clientes</a>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="{{ route('cliente.index') }}" >Clientes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" >Proveedores</a>

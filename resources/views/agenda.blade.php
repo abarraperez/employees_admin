@@ -19,7 +19,8 @@
             initialView: 'timeGridWeek',
             slotMinTime: '8:00:00',
             slotMaxTime: '19:00:00',
-           
+            
+            //Me arroja error por ser json?
             events: @json($events),
         });
 
